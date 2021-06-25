@@ -3,7 +3,7 @@ cd /tmp/rom # Depends on where source got synced
 
 # Normal build steps
 . build/envsetup.sh
-lunch lineage_tissot-userdebug
+lunch xtended_tissot-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -15,7 +15,7 @@ ccache -z # Clear old stats, so monitor script will provide real ccache statisti
 #make api-stubs-docs || echo no problem, we need ccache
 #make system-api-stubs-docs || echo no problem we need ccache
 #make test-api-stubs-docs || echo no problem, we need ccache
-make bacon & # dont remove that '&'
+make xtended & # dont remove that '&'
 sleep 85m
 kill %1
 #ccache -s
